@@ -6,7 +6,7 @@ datasets y las limitaciones están en el [README principal](../README.md).
 ```powershell
 npm install
 npm start        # http://localhost:3000
-npm test         # prueba de humo del login
+npm test         # pruebas unitarias (Jest + Testing Library)
 npm run build    # compilación de producción en build/
 ```
 
@@ -20,7 +20,20 @@ Variables de entorno (opcionales, en `frontend-react2/.env`):
 
 Estructura de `src/`:
 
-- `App.js`: pantallas (login, análisis, dashboard, historial, pacientes, panel de radiólogo).
-- `ChatWidget.js`: asistente de chat flotante, opcional y desactivado por defecto.
-- `ui.css`: interacciones, animaciones y diseño responsive.
-- `public/samples/`: radiografías de ejemplo de datasets públicos.
+```
+src/
+├── App.js              # sesión, navegación y layout
+├── api/client.js       # cliente HTTP: token JWT, expiración de sesión y endpoints
+├── hooks/useStudies.js # carga (y refresco periódico) de estudios
+├── pages/              # una pantalla por archivo: Login, Analysis, Dashboard,
+│                       # History, Patients, RadiologistPanel
+├── components/         # piezas de dominio (DiseaseCard, ValidationModal, DonutChart…)
+│   └── ui/             # componentes genéricos (ErrorState, Loader, EmptyState, badges…)
+├── utils/              # formato de fechas y textos; exportación CSV y FHIR
+├── constants.js        # enfermedades, roles, modelos y datasets
+├── theme.js            # tokens de diseño y estilos base
+└── ui.css              # interacciones, animaciones y diseño responsive
+```
+
+`components/ChatWidget.js` es el asistente de chat flotante, opcional y desactivado por defecto, y
+`public/samples/` contiene radiografías de ejemplo de datasets públicos.

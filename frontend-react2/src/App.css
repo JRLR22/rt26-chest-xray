@@ -1,5 +1,5 @@
-/* Reset mínimo. Los estilos de cada componente están en App.js (inline)
-   y las interacciones/animaciones/responsive en ui.css. */
+/* Reset mínimo. Los estilos de cada componente van inline con los tokens de
+   theme.js; las interacciones, animaciones y el responsive están en ui.css. */
 
 * {
   margin: 0;
