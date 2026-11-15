@@ -27,7 +27,7 @@ export function buildFHIRReport(study, pred) {
       ? `Hallazgo positivo: ${pred.prediction}. Confianza IA: ${confidence}.`
       : `Sin hallazgos patológicos. Confianza IA: ${confidence}.`,
     extension: [{
-      url: 'http://sistemapulmonar.mx/fhir/extension',
+      url: 'https://github.com/JRLR22/rt26-chest-xray/fhir/StructureDefinition/ai-analysis',
       valueString: JSON.stringify({
         models: Object.values(MODEL_NAMES),
         confidence: pred?.confidence,

@@ -4,7 +4,7 @@ import { api, setToken, takeSessionExpiredNotice } from '../api/client';
 import { DEMO_CREDENTIALS } from '../constants';
 import { T, spin } from '../theme';
 
-const HIGHLIGHTS = [['97.6%', 'Precisión promedio'], ['< 3s', 'Tiempo de análisis'], ['3', 'Enfermedades detectadas']];
+const HIGHLIGHTS = [['3', 'Enfermedades analizadas'], ['3', 'Modelos por enfermedad'], ['DICOM', 'Soporte nativo']];
 
 const inputStyle = {
   padding: '12px 16px', borderRadius: 10, fontSize: 14,
